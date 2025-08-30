@@ -86,7 +86,7 @@ int main()
     int ch = 0;
     double sal;
     int work;
-   
+
     do
     {
         cout << "Enter choice" << endl;
@@ -103,15 +103,16 @@ int main()
             cout << "-----------------------------------------------------" << endl;
             index++;
             break;
-        
-        case 2: {
+
+        case 2:
+        {
             cout << "Hire Worker" << endl;
             cout << "Enter id,depid,name,sal,hourswoed ,hourly rate" << endl;
             cin >> id >> depid >> name >> sal >> hoursworked >> hourlyRate;
             emp[index] = new Worker(id, depid, name, sal, hoursworked, hourlyRate);
             sal = emp[index]->computeNetSal();
             cout << "Salary : " << sal << endl;
-            //worker code
+            // worker code
             Worker *w = dynamic_cast<Worker *>(emp[index]);
             if (w)
                 cout << "Hours Worked : " << w->getHourlyWorked() << endl;
@@ -128,15 +129,14 @@ int main()
             }
             cout << "-----------------------------------------------------" << endl;
             break;
-        
+
         case 4:
             cout << "exit" << endl;
             cout << "-----------------------------------------------------" << endl;
             break;
-        
+
         default:
             break;
-        
-    }
-    }while (ch != 4);
+        }
+    } while (ch != 4);
 }
